@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <script src="form.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Firebase Web App</h1>
+    
+    <section class="form-item" id="whenSignedOut">
+        <div id="loginForm">
+            <h2>Login</h2>
+
+            <input type="email" placeholder="Email" id="logInEmail">
+            <input type="password" placeholder="Password" id="logInPassword">
+
+            <button class="form-btn" onclick="signIn()" id="signInBtn">Sign in</button>
+            <p>Don't have an account? <button class="form-btn" onclick="register()">Register</button></p>
+        </div>
+    </section>
+
+    <section class="form-item" id="whenRegistering" hidden="true">
+        <div id="registerForm">
+            <h2>Register</h2>
+            <h3>First Name</h3>
+            <input type="text" placeholder="First Name" id="firstName">
+
+            <h3>Last Name</h3>
+            <input type="text" placeholder="Last Name" id="lastName">
+
+            <h3>Age</h3>
+            <input type="number" placeholder="Age" id="age">
+
+            <h3>City</h3>
+            <input type="text" placeholder="City" id="city">
+
+            <h3>Email</h3>
+            <input type="email" placeholder="Email" id="signUpEmail">
+
+            <h3>Password</h3>
+            <input type="password" placeholder="Password" id="signUpPassword">
+            <div >
+                <button class="form-btn" onclick="signUp()" id="registerBtn">Register</button>    
+            </div>
+
+        </div>
+    </section>
+
+    <section class="form-item" id="whenSignedIn" hidden="true">
+        <div id="userDetails">
+            <img src="images/user.png" height="100px">
+            <h2 id="userName"></h2>
+            <p id="displayEmail"><b>Email:</b> </p>
+            <p id="displayAge"><b>Age:</b> </p>
+            <p id="displayCity"><b>City:</b> </p>
+        </div>
+
+        <button class="form-btn" onclick="signOut()" id="signOutBtn">Sign Out</button>
+    </section>
+
+</body>
+</html>
